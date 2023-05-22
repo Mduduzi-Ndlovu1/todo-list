@@ -1,0 +1,67 @@
+body{
+    margin: 0 ;
+    font-family: sans-serif;
+}
+
+.header{
+    background-color: royalblue;
+    height:50px;
+    font-size: 2em;
+    color: white;
+    padding: 20px;
+    
+}
+.todoform{
+    width: 100%;
+    margin:auto;
+    margin-top: 20px ;
+
+}
+.todoInput{
+    width: 75%;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    font-size: 1.5em;
+    text-align: center;
+    height: 50px;
+}
+.todoBtn{
+    width: 20%;
+    border: none;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgb(214, 214, 214);
+    font-size: 1.2em;
+    color: rgb(41, 41, 41);
+    margin-left: 20px;
+}
+
+
+.todoItem{
+    margin: auto;
+    border: 2px solid whitesmoke;
+    padding:  20px;
+    margin-top: 20px;
+
+}
+
+.todoName{
+
+}
+.DeleteBtn{
+    
+    border: none;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgb(145, 144, 144);
+    font-size: 1.2em;
+    color: rgb(41, 41, 41);
+    margin-left: 20px;
+
+
+}
+
+.DeleteBtn:hover{
+    background-color: rgb(110, 110, 110);
+    border-radius: 58px;
+}

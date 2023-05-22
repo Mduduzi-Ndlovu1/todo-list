@@ -1,13 +1,19 @@
-import Todo from './components/Todo';
-import './App.css';
+import Header from "./components/Header";
+import Form from "./components/Form";
+import { useState } from "react";
+import TodoList from "./components/TodoList";
+
 
 function App() {
+  const [todo, setTodo] = useState('');
+  const [todoList,setTodoList] = useState([])
+
   return (
-    <div className='absolute inset-10 p-20 border-2 border-solid' >
-      <div className='p-2 '>
-        <h1 className='flex justify-center' >The ToDo list</h1>
-      </div>
-      <Todo/>
+    <div>
+      <Header/>
+      <Form todo={todo} setTodo={setTodo} setTodoList={setTodoList} todoList={todoList}/>
+      <TodoList setTodoList ={setTodoList} todoList={todoList} />
+
     </div>
   );
 }

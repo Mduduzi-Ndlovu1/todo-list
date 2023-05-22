@@ -1,34 +1,20 @@
-import React, {useState} from 'react';
-import ListItem from './ListItem';
+import React from 'react';
+import styles from '../style.module.css';
 
-export default function Todo() {
-  const [todo, setTodo] = useState("");
-  const [todoList, setTodoList] = useState([]);
 
-  const handleChange = (event) => {
-    setTodo(event.target.value);
-
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let tempList = todoList;
-    tempList.push(todo);
-    setTodoList(tempList)
-
-    setTodo("") // to clear input text
-  }
-
-  return <div>
-    <form onSubmit={handleSubmit}>
-      <input value={todo} onChange={handleChange} type="text" className='border'></input>
-      <button type='submit' className='border'> Add Task</button>
-    </form>
-
-    {todoList.map((item) => (
-      <ListItem key={item} name={item}>
-       
-      </ListItem>
-    ))}
-  </div>
+const Todo = ({todoItem,todoList,setTodoList}) => {
+    const deleteTodo = () => {
+        setTodoList(        todoList.filter((item) => item.id !== todoItem.id)
+        )
+    }
+  return (
+    <div>
+        <div className={styles.todoItem}>
+            <h3 className={styles.todoName}>{todoItem.name}</h3>
+            <button onClick={deleteTodo} className={styles.DeleteBtn}>Task completed</button>
+        </div>
+    </div>
+  )
 }
+
+export default Todo
